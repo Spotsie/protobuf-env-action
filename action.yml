@@ -1,0 +1,13 @@
+name: 'Protobuf Compile'
+description: 'Compile protobufs with buf '
+inputs:
+  cmd:
+    description: "command to execute"
+    required: true
+    default: echo "cmd input is not set"
+outputs: {}
+runs:
+  using: 'docker'
+  image: 'ghcr.io/spotsie/protobuf-env:master'
+  args:
+    - ${{ inputs.cmd }}
